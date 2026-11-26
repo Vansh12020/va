@@ -1,0 +1,225 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sorry Sneha 🥺💗</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #ffd6e7, #e8d8ff, #fff0f5);
+    color: #68475f;
+}
+
+.card {
+    width: 100%;
+    max-width: 390px;
+    padding: 30px 22px;
+    text-align: center;
+    background: rgba(255,255,255,0.92);
+    border-radius: 28px;
+    box-shadow: 0 12px 35px rgba(140,80,130,0.2);
+    border: 2px solid white;
+    animation: appear 0.8s ease;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+h1 {
+    color: #e75480;
+    font-size: 28px;
+    margin-bottom: 12px;
+}
+
+.subtitle {
+    font-size: 15px;
+    margin-bottom: 20px;
+}
+
+.cat {
+    font-size: 105px;
+    margin: 12px 0;
+    animation: cry 1.5s infinite;
+}
+
+@keyframes cry {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+
+.speech {
+    display: inline-block;
+    background: #fff0f5;
+    padding: 12px 18px;
+    border-radius: 20px;
+    font-size: 15px;
+    margin-bottom: 20px;
+}
+
+.message {
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 22px;
+}
+
+.highlight {
+    color: #e75480;
+    font-weight: bold;
+}
+
+button {
+    width: 100%;
+    border: none;
+    padding: 15px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(135deg, #ff79a8, #e75480);
+    cursor: pointer;
+    margin-top: 8px;
+}
+
+button:active {
+    transform: scale(0.96);
+}
+
+#reply {
+    display: none;
+    background: #fff0f5;
+    padding: 18px;
+    border-radius: 20px;
+    margin-top: 20px;
+    line-height: 1.8;
+    animation: appear 0.5s ease;
+}
+
+.footer {
+    margin-top: 22px;
+    font-size: 12px;
+    color: #a18aa4;
+}
+
+.heart {
+    position: fixed;
+    bottom: -30px;
+    pointer-events: none;
+    animation: floatUp 4s linear forwards;
+}
+
+@keyframes floatUp {
+    to {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+    <h1>I'm Sorry, Sneha 🥺💗</h1>
+
+    <p class="subtitle">
+        Ek chhoti si apology meri BESTIE ke liye 🎀
+    </p>
+
+    <div class="cat">😿</div>
+
+    <div class="speech">
+        "Please forgive me Sneha 😭👉👈"
+    </div>
+
+    <div class="message">
+
+        Hey Sneha! 🥹💗<br><br>
+
+        Mujhse jo galti hui, uske liye
+        <span class="highlight">I'm genuinely sorry.</span> 🥺<br><br>
+
+        Mera intention tumhe hurt karna bilkul nahi tha.
+        Tum meri achhi dost ho aur main nahi chahta
+        ki meri wajah se tum upset ho. 🫶🏻<br><br>
+
+        Please gussa thoda kam kar do na. 😭<br><br>
+        Mhari galti maaf kar dijyo, ab naraz mat hovo. 🥺💗😭<br><br>
+        Pakko vaado, ab aisi galti dobara koni karu. 🥹❤️<br><br>
+        <span class="highlight">
+            Sorry yaar, Sneha! 💗🌷
+        </span>
+
+    </div>
+
+    <button onclick="forgive()">
+        Tap if you forgive me 🥺💖
+    </button>
+
+    <div id="reply">
+        YAYYYYY! 🥹🎀💗<br><br>
+    </div>
+
+    <div class="footer">
+        Made with friendship & a little guilt 🐾
+    </div>
+
+</div>
+
+<script>
+function forgive() {
+
+    document.getElementById("reply").style.display = "block";
+
+    document.querySelector("button").innerText =
+        "Thank you Sneha! 💗🥹";
+
+    for (let i = 0; i < 25; i++) {
+        setTimeout(createHeart, i * 100);
+    }
+}
+
+function createHeart() {
+
+    const heart = document.createElement("div");
+
+    heart.className = "heart";
+
+    const emojis = ["💗", "💕", "🥹", "🌸", "🐱", "💖"];
+
+    heart.innerText =
+        emojis[Math.floor(Math.random() * emojis.length)];
+
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = "25px";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => heart.remove(), 4000);
+}
+</script>
+
+</body>
+</html>
